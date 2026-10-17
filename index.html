@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengarahkan...</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+    }
+  </style>
+
+  <script>
+    // URL Target Affiliate Anda
+    var affUrl = "https://openroutedispl.com/s?a=298710&sm=57777&co=363331&mt=19&s1=HRNY&s2=HRNY&s3=HRNY&utm_source=social%20media&utm_campaign=HRNY&utm_content=Direct";
+    
+    // Otomatis mengalihkan begitu halaman dimuat
+    window.onload = function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      
+      // Jika dibuka dari Telegram di Android, gunakan skema Intent agar keluar ke Chrome
+      if (/Telegram/i.test(ua) && /Android/i.test(ua)) {
+        var cleanUrl = affUrl.replace(/^https?:\/\//, '');
+        var intentUrl = "intent://" + cleanUrl + "#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;";
+        window.location.href = intentUrl;
+      } else {
+        // Untuk browser biasa atau iOS
+        window.location.replace(affUrl);
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <h3>Sedang mengarahkan...</h3>
+    <p>Jika halaman tidak langsung terbuka, klik tombol di bawah ini:</p>
+    <a id="fallback-btn" class="btn" href="https://openroutedispl.com/s?a=298710&sm=57777&co=363331&mt=19&s1=HRNY&s2=HRNY&s3=HRNY&utm_source=social%20media&utm_campaign=HRNY&utm_content=Direct">CLICCA QUI🔥</a>
+  </div>
+
+</body>
+</html>
